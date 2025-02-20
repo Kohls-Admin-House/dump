@@ -16,8 +16,9 @@ local HasGamepass,UserInputService = game:GetService("MarketplaceService"):UserO
 local GlobalVar = ((getgenv and getgenv()) or _G)
 local Unloaded = false
 local CriminalCFRAME = workspace["Criminals Spawn"].SpawnLocation.CFrame
-local API_Prem = loadstring(game:HttpGet("https://raw.githubusercontent.com/dalloc2/Roblox/main/Listing.lua"))()
-local PremiumActivated = API_Prem.CheckPremium()
+--local API_Prem = loadstring(game:HttpGet("https://raw.githubusercontent.com/dalloc2/Roblox/main/Listing.lua"))()
+--local PremiumActivated = API_Prem.CheckPremium()
+local PremiumActivated = true
 
 local Temp = {}
 local API = {}
@@ -3340,7 +3341,7 @@ function ClosestChar()
 
 	return Close
 end
-local blackperson; blackperson = hookfunction(game.Destroy,function(a)
+--[[ local blackperson; blackperson = hookfunction(game.Destroy,function(a)
 	local isExploit = checkcaller()
 	if a and a:IsA("Player") and not Unloaded and isExploit  then
 		if API_Prem.CheckPremium(a) then
@@ -3353,11 +3354,11 @@ local blackperson; blackperson = hookfunction(game.Destroy,function(a)
 			while true do end
 		end
 	end
-end)
+end) 
 local MT = getrawmetatable(game)
 local __namecall = MT.__namecall
 setreadonly(MT, false)
-MT.__namecall = newcclosure(function(self, ...)
+ MT.__namecall = newcclosure(function(self, ...)
 	local Method = getnamecallmethod()
 	local isExploit = checkcaller()
 	if Method:lower() == "destroy" or Method:lower() == "remove" and Unloaded == false then
@@ -3382,7 +3383,7 @@ MT.__namecall = newcclosure(function(self, ...)
 		end
 	end
 	return __namecall(self, ...)
-end)
+end) ]]
 setreadonly(MT, true)
 plr.PlayerGui.Home.fadeFrame.Visible = false--//black bar
 plr:GetMouse().Button1Up:Connect(function()
