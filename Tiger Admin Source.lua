@@ -3383,7 +3383,7 @@ setreadonly(MT, false)
 		end
 	end
 	return __namecall(self, ...)
-end) ]]
+end) 
 setreadonly(MT, true)
 plr.PlayerGui.Home.fadeFrame.Visible = false--//black bar
 plr:GetMouse().Button1Up:Connect(function()
@@ -3396,7 +3396,7 @@ plr:GetMouse().Button1Up:Connect(function()
 			game:GetService("ReplicatedStorage").ShootEvent:FireServer(Bullets, Gun)
 		end
 	end
-end)
+end)]]
 --//LOOPS
 coroutine.wrap(function()
 	while task.wait() do --//Faster loop
