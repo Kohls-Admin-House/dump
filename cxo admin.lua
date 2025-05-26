@@ -912,9 +912,9 @@ function gui(plr, section)
 		Insert_Sudo.TextWrapped = true
 	end
 
-	local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-	local utilities = game:GetService("ServerScriptService").goog.Utilities
-	local loa = utilities:FindFirstChild("loadstring")
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
 	
 	if loa then
 		loa = loa:Clone()
@@ -7852,9 +7852,9 @@ function scan()
 			gmodlistener()
 
 		elseif t.Name == "RemoteScript" then
-			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+			--local utilities = game:GetService("ServerScriptService").goog.Utilities
+			--local loa = utilities:FindFirstChild("loadstring")
 			
 			if loa then
 				loa = loa:Clone()
@@ -7868,85 +7868,17 @@ function scan()
 			if not loa then
 				warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 			end
-			loa.Parent = scr
-			scr:WaitForChild("Exec").Value = [[
-				
-			local r = game:GetService("ReplicatedStorage")
-			local remote = r:WaitForChild("cxo's folder"):WaitForChild("cxo's gmod remote")
-			local UserInputService = game:GetService("UserInputService")
-			local Mouse = game.Players.LocalPlayer:GetMouse()
-
-			local selected = nil
-			local isgrabbed = false
-
-			local function pickup(target)
-				if target and target:IsA("BasePart") and target.Anchored == false and not isgrabbed then
-					isgrabbed = true
-					selected = target
-					remote:FireServer("Pickup", selected)
-				end
-			end
-
-			local function update(pos)
-				if selected and isgrabbed then
-					remote:FireServer("Update", pos)
-				end
-			end
-
-			local function release()
-				if selected then
-					isgrabbed = false
-					selected = nil
-					remote:FireServer("Release")
-				end
-			end
-
-			Mouse.Button1Down:Connect(function()
-				local target = Mouse.Target
-				pickup(target)
-			end)
-
-			Mouse.Move:Connect(function()
-				if selected and isgrabbed then
-					local pos = Mouse.Hit.p
-					update(pos)
-				end
-			end)
-
-			Mouse.Button1Up:Connect(function()
-				release()
-			end)
-
-			UserInputService.TouchStarted:Connect(function(input)
-				if input.UserInputType == Enum.UserInputType.Touch then
-					local target = workspace:FindPartOnRayWithIgnoreList(workspace.CurrentCamera:ScreenPointToRay(input.Position.X, input.Position.Y), {game.Players.LocalPlayer.Character})
-					pickup(target)
-				end
-			end)
-
-			UserInputService.TouchMoved:Connect(function(input)
-				if selected and isgrabbed then
-					local touchpos = input.Position
-					local ray = workspace.CurrentCamera:ScreenPointToRay(touchpos.X, touchpos.Y)
-					local touchpos = ray.Origin + ray.Direction * 50
-					update(touchpos)
-				end
-			end)
-
-			UserInputService.TouchEnded:Connect(function(input)
-				release()
-			end)
-
-			]]
+			--loa.Parent = scr
+			--scr:WaitForChild("Exec").Value = [[ no ]]
 			
-			scr.Parent = a
-			scr.Name = "RemoteScript"
-			scr.Enabled = true
+			--scr.Parent = a
+			--scr.Name = "RemoteScript"
+			--scr.Enabled = true
 
 		elseif t.Name == "OrbScript" then
-			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+			--local utilities = game:GetService("ServerScriptService").goog.Utilities
+			--local loa = utilities:FindFirstChild("loadstring")
 			
 			if loa then
 				loa = loa:Clone()
@@ -7960,24 +7892,16 @@ function scan()
 			if not loa then
 				warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 			end
-			loa.Parent = scr
-			scr:WaitForChild("Exec").Value = [[
-			
-			local lp = game.Players.LocalPlayer
-			local lpc = lp.Character
-
-			repeat task.wait() until lpc:FindFirstChild("ff")
-			lpc.ff.CanCollide = false
-
-			]]
-			scr.Parent = a
-			scr.Name = "OrbScript"
-			scr.Enabled = true
+			--loa.Parent = scr
+			--scr:WaitForChild("Exec").Value = [[]]
+			--scr.Parent = a
+			--scr.Name = "OrbScript"
+			--scr.Enabled = true
 
 		elseif t.Name == "Crash" then
-			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+			--local utilities = game:GetService("ServerScriptService").goog.Utilities
+			--local loa = utilities:FindFirstChild("loadstring")
 			
 			if loa then
 				loa = loa:Clone()
@@ -7991,20 +7915,16 @@ function scan()
 			if not loa then
 				warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 			end
-			loa.Parent = scr
-			scr:WaitForChild("Exec").Value = [[
-			
-			while true do end
-
-			]]
-			scr.Parent = a
-			scr.Name = "Crash"
-			scr.Enabled = true
+			--loa.Parent = scr
+			--scr:WaitForChild("Exec").Value = [[ ]]
+			--scr.Parent = a
+			--scr.Name = "Crash"
+			--scr.Enabled = true
 
 		elseif t.Name == "JumpScareScript" then
-			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+			--local utilities = game:GetService("ServerScriptService").goog.Utilities
+			--local loa = utilities:FindFirstChild("loadstring")
 			
 			if loa then
 				loa = loa:Clone()
@@ -8018,22 +7938,12 @@ function scan()
 			if not loa then
 				warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 			end
-			loa.Parent = scr
-			scr:WaitForChild("Exec").Value = [[
-			
-			local sound = Instance.new("Sound", workspace)
-			sound.SoundId = "rbxassetid://17518855592"
-			sound.TimePosition = 1.7
-			sound.Volume = 10
-			sound:Play()
-			sound.Ended:Connect(function()
-				sound:Destroy()
-			end)
+			--loa.Parent = scr
+			--scr:WaitForChild("Exec").Value = [[]]
 
-			]]
-			scr.Parent = a
-			scr.Name = "JumpScareScript"
-			scr.Enabled = true
+			--scr.Parent = a
+			--scr.Name = "JumpScareScript"
+			--scr.Enabled = true
 
 		elseif t.Name == "cxo's Device Remote" then
 			local deviceremote = Instance.new("RemoteFunction", a)
@@ -8042,10 +7952,10 @@ function scan()
 			scanfordevice()
 
 		elseif t.Name == "cxo's Device LocalScript" then
-			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 
-			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local utilities = game:GetService("ServerScriptService").goog.Utilities
+			--local loa = utilities:FindFirstChild("loadstring")
 			
 			if loa then
 				loa = loa:Clone()
@@ -8060,56 +7970,12 @@ function scan()
 				warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 			end
 			
-			loa.Parent = scr
-			scr:WaitForChild("Exec").Value = [[
-
-			local UserInputService = game:GetService("UserInputService")
-			local remote = game:GetService("ReplicatedStorage"):FindFirstChild("cxo's folder"):WaitForChild("cxo's Device Remote")
-		
-			local devices = {
-				TouchEnabled = UserInputService.TouchEnabled,
-				VREnabled = UserInputService.VREnabled,
-				GamepadEnabled = UserInputService.GamepadEnabled,
-				MouseEnabled = UserInputService.MouseEnabled,
-				KeyboardEnabled = UserInputService.KeyboardEnabled
-			}
-		
-			local device = ""
-		
-			if devices.VREnabled then
-				device = device .. "🥽 + "
-			end
-			if devices.GamepadEnabled then
-				device = device .. "🎮 + "
-			end
-			if devices.TouchEnabled then
-				device = device .. "📱 + "
-			end
-			if devices.MouseEnabled and devices.KeyboardEnabled then
-				device = device .. "⌨️🖱️ + "
-			elseif devices.MouseEnabled then
-				device = device .. "🖱️ + "
-			elseif devices.KeyboardEnabled then
-				device = device .. "⌨️ + "
-			end
-		
-			if device:sub(-3) == " + " then
-				device = device:sub(1, -4)
-			end
-		
-			if device == "" then
-				device = "❓"
-			end
-		
-			if remote then
-				remote:InvokeServer(device)
-			end
-		
-			]]
+			--loa.Parent = scr
+			--scr:WaitForChild("Exec").Value = [[]]
 			
-			scr.Parent = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder")
-			scr.Name = "cxo's Device LocalScript"
-			scr.Enabled = true
+			--scr.Parent = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder")
+			--scr.Name = "cxo's Device LocalScript"
+			--scr.Enabled = true
 
 		elseif t.Name == "cxo's remote function" then
 			local cxor = Instance.new("RemoteEvent", a)
@@ -8119,6 +7985,148 @@ function scan()
 		end
 	end)
 end
+																																																																																																																																								
+																																																																																																																																								
+function start()
+	local a = game:GetService("ReplicatedStorage"):FindFirstChild("cxo's folder")
+	--[[local r = Instance.new("RemoteEvent", a)
+	r.Name = "cxo's gmod remote"]]
+
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
+	
+	if loa then
+		loa = loa:Clone()
+	else
+		loa = utilities:FindFirstChild("Loadstring")
+		if loa then
+			loa = loa:Clone()
+		end
+	end
+	
+	if not loa then
+		warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
+	end
+	--loa.Parent = scr
+	--scr:WaitForChild("Exec").Value = [[]]
+	
+	--scr.Parent = a
+	--scr.Name = "RemoteScript"
+	--scr.Enabled = true
+
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
+	
+	if loa then
+		loa = loa:Clone()
+	else
+		loa = utilities:FindFirstChild("Loadstring")
+		if loa then
+			loa = loa:Clone()
+		end
+	end
+	
+	if not loa then
+		warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
+	end
+	--loa.Parent = scr
+	--scr:WaitForChild("Exec").Value = [[]]
+	--scr.Parent = a
+	--scr.Name = "OrbScript"
+	--scr.Enabled = true
+
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
+	
+	if loa then
+		loa = loa:Clone()
+	else
+		loa = utilities:FindFirstChild("Loadstring")
+		if loa then
+			loa = loa:Clone()
+		end
+	end
+	
+	if not loa then
+		warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
+	end
+	--loa.Parent = scr
+	--scr:WaitForChild("Exec").Value = [[no]]
+	--scr.Parent = a
+	--scr.Name = "Crash"
+	--scr.Enabled = true
+	
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
+	
+	if loa then
+		loa = loa:Clone()
+	else
+		loa = utilities:FindFirstChild("Loadstring")
+		if loa then
+			loa = loa:Clone()
+		end
+	end
+	
+	if not loa then
+		warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
+	end
+	--loa.Parent = scr
+	--scr:WaitForChild("Exec").Value = [[ no ]]
+	--scr.Parent = a
+	--scr.Name = "JumpScareScript"
+	--scr.Enabled = true
+
+	--local cxoooo = scr:Clone()
+	--cxoooo.Parent = game:GetService("ServerScriptService")
+
+	--local deviceremote = Instance.new("RemoteFunction", a)
+	--deviceremote.Name = "cxo's Device Remote"
+
+	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+	--local utilities = game:GetService("ServerScriptService").goog.Utilities
+	--local loa = utilities:FindFirstChild("loadstring")
+	
+	if loa then
+		loa = loa:Clone()
+	else
+		loa = utilities:FindFirstChild("Loadstring")
+		if loa then
+			loa = loa:Clone()
+		end
+	end
+	
+	if not loa then
+		warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
+	end
+	--loa.Parent = scr
+	--scr:WaitForChild("Exec").Value = [[ no ]]
+	
+	--scr.Parent = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder")
+	--scr.Name = "cxo's Device LocalScript"
+	--scr.Enabled = true
+
+	if game:GetService("ServerScriptService"):FindFirstChild("goog"):FindFirstChild("Utilities"):FindFirstChild("loadstring") then
+		local goog = game:GetService("ServerScriptService"):FindFirstChild("goog"):FindFirstChild("Utilities"):FindFirstChild("loadstring"):Clone()
+		goog.Parent = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder")
+	else
+		notfi(sender, "cxo's admin", "loadstring not found in SSS, script will still work but certain commands wont.")
+	end
+
+	local cxor = Instance.new("RemoteEvent", a)
+	cxor.Name = "cxo's remote"
+
+end
+
+start()
+scan()
+scanfordevice()
+gmodlistener()
+remotelistener()
 
 --[[ saving here for now, prob never gonna use cuz it requires remotes and retarded shit
 
