@@ -6791,8 +6791,8 @@ function getdevice(player)
 				end
 
 			else
-				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
-				local utilities = game:GetService("ServerScriptService").goog.Utilities
+				--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
+				--local utilities = game:GetService("ServerScriptService").goog.Utilities
 				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
@@ -6807,63 +6807,18 @@ function getdevice(player)
 				if not loa then
 					warn("Could not find 'loadstring' or 'Loadstring' in goog.Utilities")
 				end
-				loa.Parent = scr
-				scr:WaitForChild("Exec").Value = [[
-
-				local UserInputService = game:GetService("UserInputService")
-				local remote = game:GetService("ReplicatedStorage"):FindFirstChild("cxo's folder"):WaitForChild("cxo's Device Remote")
-			
-				local devices = {
-					TouchEnabled = UserInputService.TouchEnabled,
-					VREnabled = UserInputService.VREnabled,
-					GamepadEnabled = UserInputService.GamepadEnabled,
-					MouseEnabled = UserInputService.MouseEnabled,
-					KeyboardEnabled = UserInputService.KeyboardEnabled
-				}
-			
-				local device = ""
-			
-				if devices.VREnabled then
-					device = device .. "🥽 + "
-				end
-				if devices.GamepadEnabled then
-					device = device .. "🎮 + "
-				end
-				if devices.TouchEnabled then
-					device = device .. "📱 + "
-				end
-				if devices.MouseEnabled and devices.KeyboardEnabled then
-					device = device .. "⌨️🖱️ + "
-				elseif devices.MouseEnabled then
-					device = device .. "🖱️ + "
-				elseif devices.KeyboardEnabled then
-					device = device .. "⌨️ + "
-				end
-			
-				if device:sub(-3) == " + " then
-					device = device:sub(1, -4)
-				end
-			
-				if device == "" then
-					device = "❓"
-				end
-			
-				if remote then
-					remote:InvokeServer(device)
-				end
-			
-				]]
-				
+				--loa.Parent = scr
+				--scr:WaitForChild("Exec").Value = [[]]
 				if player and player.Character then
-					scr.Parent = player.Character
+					--scr.Parent = player.Character
 				else
 					if player then
-						scr.Parent = player:WaitForChild("PlayerGui")
+						--scr.Parent = player:WaitForChild("PlayerGui")
 					end
 				end
 
-				scr.Name = "cxo's Device LocalScript"
-				scr.Enabled = true
+				--scr.Name = "cxo's Device LocalScript"
+				--scr.Enabled = true
 			end
 			repeat task.wait() until googul[player.UserId]
 			return googul[player.UserId]
@@ -8110,13 +8065,15 @@ function start()
 	--scr.Name = "cxo's Device LocalScript"
 	--scr.Enabled = true
 
+	--[[																																																										
 	if game:GetService("ServerScriptService"):FindFirstChild("goog"):FindFirstChild("Utilities"):FindFirstChild("loadstring") then
 		local goog = game:GetService("ServerScriptService"):FindFirstChild("goog"):FindFirstChild("Utilities"):FindFirstChild("loadstring"):Clone()
 		goog.Parent = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder")
 	else
 		notfi(sender, "cxo's admin", "loadstring not found in SSS, script will still work but certain commands wont.")
 	end
-
+]]
+																																																											
 	local cxor = Instance.new("RemoteEvent", a)
 	cxor.Name = "cxo's remote"
 
