@@ -1262,7 +1262,7 @@ function notfi(plr, title, message, duration) -- dizzy ui
 	end)()
 end
 
-require(72300568939183).load() -- maxwell the cat
+-- require(72300568939183).load() -- maxwell the cat
 
 -------------------------------------------- COMMANDS --------------------------------------------
 
