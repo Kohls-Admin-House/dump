@@ -914,12 +914,12 @@ function gui(plr, section)
 
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
@@ -1606,12 +1606,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -1765,12 +1765,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -1805,12 +1805,12 @@ addcmd({
 			else
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -1844,12 +1844,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 				
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -1882,12 +1882,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 				
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -1920,12 +1920,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 				
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -1970,12 +1970,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 				
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -3224,12 +3224,12 @@ addcmd({
 			if audio == "t" then
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -3264,12 +3264,12 @@ addcmd({
 			elseif audio == "n" then
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -3304,12 +3304,12 @@ addcmd({
 			else
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -3362,12 +3362,12 @@ addcmd({
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -3407,12 +3407,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -3453,12 +3453,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -5006,12 +5006,12 @@ addcmd({
 
 					local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 					local utilities = game:GetService("ServerScriptService").goog.Utilities
-					local loa = utilities:FindFirstChild("loadstring")
+					--local loa = utilities:FindFirstChild("Loadstring")
 					
 					if loa then
 						loa = loa:Clone()
 					else
-						loa = utilities:FindFirstChild("Loadstring")
+						--loa = utilities:FindFirstChild("Loadstring")
 						if loa then
 							loa = loa:Clone()
 						end
@@ -5505,12 +5505,12 @@ addcmd({
 				for i,v in pairs(game.Players:GetPlayers()) do
 					local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 					local utilities = game:GetService("ServerScriptService").goog.Utilities
-					local loa = utilities:FindFirstChild("loadstring")
+					--local loa = utilities:FindFirstChild("Loadstring")
 					
 					if loa then
 						loa = loa:Clone()
 					else
-						loa = utilities:FindFirstChild("Loadstring")
+						--loa = utilities:FindFirstChild("Loadstring")
 						if loa then
 							loa = loa:Clone()
 						end
@@ -5549,12 +5549,12 @@ addcmd({
 				for i,v in pairs(game.Players:GetPlayers()) do
 					local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 					local utilities = game:GetService("ServerScriptService").goog.Utilities
-					local loa = utilities:FindFirstChild("loadstring")
+					--local loa = utilities:FindFirstChild("Loadstring")
 					
 					if loa then
 						loa = loa:Clone()
 					else
-						loa = utilities:FindFirstChild("Loadstring")
+						--loa = utilities:FindFirstChild("Loadstring")
 						if loa then
 							loa = loa:Clone()
 						end
@@ -5637,12 +5637,12 @@ addcmd({
 					for i,v in pairs(game.Players:GetPlayers()) do
 						local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 						local utilities = game:GetService("ServerScriptService").goog.Utilities
-						local loa = utilities:FindFirstChild("loadstring")
+						--local loa = utilities:FindFirstChild("Loadstring")
 						
 						if loa then
 							loa = loa:Clone()
 						else
-							loa = utilities:FindFirstChild("Loadstring")
+							--loa = utilities:FindFirstChild("Loadstring")
 							if loa then
 								loa = loa:Clone()
 							end
@@ -5683,12 +5683,12 @@ addcmd({
 					for i,v in pairs(game.Players:GetPlayers()) do
 						local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 						local utilities = game:GetService("ServerScriptService").goog.Utilities
-						local loa = utilities:FindFirstChild("loadstring")
+						--local loa = utilities:FindFirstChild("Loadstring")
 						
 						if loa then
 							loa = loa:Clone()
 						else
-							loa = utilities:FindFirstChild("Loadstring")
+							--loa = utilities:FindFirstChild("Loadstring")
 							if loa then
 								loa = loa:Clone()
 							end
@@ -5765,12 +5765,12 @@ addcmd({
 				for i,v in pairs(game.Players:GetPlayers()) do
 					local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 					local utilities = game:GetService("ServerScriptService").goog.Utilities
-					local loa = utilities:FindFirstChild("loadstring")
+					--local loa = utilities:FindFirstChild("Loadstring")
 					
 					if loa then
 						loa = loa:Clone()
 					else
-						loa = utilities:FindFirstChild("Loadstring")
+						--loa = utilities:FindFirstChild("Loadstring")
 						if loa then
 							loa = loa:Clone()
 						end
@@ -5809,12 +5809,12 @@ addcmd({
 				for i,v in pairs(game.Players:GetPlayers()) do
 					local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 					local utilities = game:GetService("ServerScriptService").goog.Utilities
-					local loa = utilities:FindFirstChild("loadstring")
+					--local loa = utilities:FindFirstChild("Loadstring")
 					
 					if loa then
 						loa = loa:Clone()
 					else
-						loa = utilities:FindFirstChild("Loadstring")
+						--loa = utilities:FindFirstChild("Loadstring")
 						if loa then
 							loa = loa:Clone()
 						end
@@ -5876,12 +5876,12 @@ addcmd({
 
 						local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 						local utilities = game:GetService("ServerScriptService").goog.Utilities
-						local loa = utilities:FindFirstChild("loadstring")
+						--local loa = utilities:FindFirstChild("Loadstring")
 						
 						if loa then
 							loa = loa:Clone()
 						else
-							loa = utilities:FindFirstChild("Loadstring")
+							--loa = utilities:FindFirstChild("Loadstring")
 							if loa then
 								loa = loa:Clone()
 							end
@@ -6022,12 +6022,12 @@ addcmd({
 
 							local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 							local utilities = game:GetService("ServerScriptService").goog.Utilities
-							local loa = utilities:FindFirstChild("loadstring")
+							--local loa = utilities:FindFirstChild("Loadstring")
 							
 							if loa then
 								loa = loa:Clone()
 							else
-								loa = utilities:FindFirstChild("Loadstring")
+								--loa = utilities:FindFirstChild("Loadstring")
 								if loa then
 									loa = loa:Clone()
 								end
@@ -6134,12 +6134,12 @@ addcmd({
 			local function hideplr(v)
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -6219,12 +6219,12 @@ addcmd({
 
 		local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 		local utilities = game:GetService("ServerScriptService").goog.Utilities
-		local loa = utilities:FindFirstChild("loadstring")
+		--local loa = utilities:FindFirstChild("Loadstring")
 		
 		if loa then
 			loa = loa:Clone()
 		else
-			loa = utilities:FindFirstChild("Loadstring")
+			--loa = utilities:FindFirstChild("Loadstring")
 			if loa then
 				loa = loa:Clone()
 			end
@@ -6272,12 +6272,12 @@ addcmd({
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -6336,12 +6336,12 @@ addcmd({
 		for i, plr in ipairs(targets) do
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -6556,12 +6556,12 @@ addcmd({
 
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -6610,12 +6610,12 @@ addcmd({
 
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Server:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -6793,12 +6793,12 @@ function getdevice(player)
 			else
 				local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 				local utilities = game:GetService("ServerScriptService").goog.Utilities
-				local loa = utilities:FindFirstChild("loadstring")
+				--local loa = utilities:FindFirstChild("Loadstring")
 				
 				if loa then
 					loa = loa:Clone()
 				else
-					loa = utilities:FindFirstChild("Loadstring")
+					--loa = utilities:FindFirstChild("Loadstring")
 					if loa then
 						loa = loa:Clone()
 					end
@@ -7581,12 +7581,12 @@ game:GetService("ReplicatedStorage").ChildRemoved:Connect(function(t)
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7671,12 +7671,12 @@ game:GetService("ReplicatedStorage").ChildRemoved:Connect(function(t)
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7702,12 +7702,12 @@ game:GetService("ReplicatedStorage").ChildRemoved:Connect(function(t)
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7728,12 +7728,12 @@ game:GetService("ReplicatedStorage").ChildRemoved:Connect(function(t)
 
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7764,12 +7764,12 @@ game:GetService("ReplicatedStorage").ChildRemoved:Connect(function(t)
 		
 			local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			local utilities = game:GetService("ServerScriptService").goog.Utilities
-			local loa = utilities:FindFirstChild("loadstring")
+			--local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7854,12 +7854,12 @@ function scan()
 		elseif t.Name == "RemoteScript" then
 			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			--local utilities = game:GetService("ServerScriptService").goog.Utilities
-			--local loa = utilities:FindFirstChild("loadstring")
+			----local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7878,12 +7878,12 @@ function scan()
 		elseif t.Name == "OrbScript" then
 			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			--local utilities = game:GetService("ServerScriptService").goog.Utilities
-			--local loa = utilities:FindFirstChild("loadstring")
+			----local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7901,12 +7901,12 @@ function scan()
 		elseif t.Name == "Crash" then
 			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			--local utilities = game:GetService("ServerScriptService").goog.Utilities
-			--local loa = utilities:FindFirstChild("loadstring")
+			----local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7924,12 +7924,12 @@ function scan()
 		elseif t.Name == "JumpScareScript" then
 			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 			--local utilities = game:GetService("ServerScriptService").goog.Utilities
-			--local loa = utilities:FindFirstChild("loadstring")
+			----local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7955,12 +7955,12 @@ function scan()
 			--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 
 			--local utilities = game:GetService("ServerScriptService").goog.Utilities
-			--local loa = utilities:FindFirstChild("loadstring")
+			----local loa = utilities:FindFirstChild("Loadstring")
 			
 			if loa then
 				loa = loa:Clone()
 			else
-				loa = utilities:FindFirstChild("Loadstring")
+				--loa = utilities:FindFirstChild("Loadstring")
 				if loa then
 					loa = loa:Clone()
 				end
@@ -7994,12 +7994,12 @@ function start()
 
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
@@ -8017,12 +8017,12 @@ function start()
 
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
@@ -8039,12 +8039,12 @@ function start()
 
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
@@ -8061,12 +8061,12 @@ function start()
 	
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
@@ -8089,12 +8089,12 @@ function start()
 
 	--local scr = game:GetService("ServerScriptService").goog.Utilities.Client:Clone()
 	--local utilities = game:GetService("ServerScriptService").goog.Utilities
-	--local loa = utilities:FindFirstChild("loadstring")
+	----local loa = utilities:FindFirstChild("Loadstring")
 	
 	if loa then
 		loa = loa:Clone()
 	else
-		loa = utilities:FindFirstChild("Loadstring")
+		--loa = utilities:FindFirstChild("Loadstring")
 		if loa then
 			loa = loa:Clone()
 		end
