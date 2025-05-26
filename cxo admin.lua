@@ -8120,6 +8120,7 @@ function scan()
 	end)
 end
 
+pcall(function()
 function start()
 	local a = game:GetService("ReplicatedStorage"):FindFirstChild("cxo's folder")
 	--[[local r = Instance.new("RemoteEvent", a)
@@ -8389,6 +8390,7 @@ function start()
 	cxor.Name = "cxo's remote"
 
 end
+end)
 
 start()
 scan()
