@@ -82,6 +82,13 @@ local tag = true
 
 -------------------------------------------- SETUP --------------------------------------------
 
+local r = game:GetService("ReplicatedStorage")
+local s = game:GetService("ServerScriptService")
+local folder = Instance.new("Folder", r)
+folder.Name = "cxo's folder"
+local gmodremote = Instance.new("RemoteEvent", folder)
+gmodremote.Name = "cxo's gmod remote"
+
 local success, result = pcall(function() -- setup
 	return game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/pcxo/cxos-admin/refs/heads/main/setup")
 end)
