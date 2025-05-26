@@ -6761,6 +6761,7 @@ addcmd({
 
 -------------------------------------------- FUNCTIONS --------------------------------------------
 
+--[[
 function scanfordevice()
 	local remote = game:GetService("ReplicatedStorage"):WaitForChild("cxo's folder"):WaitForChild("cxo's Device Remote")
 	if remote then
@@ -6773,6 +6774,7 @@ function scanfordevice()
 		end
 	end
 end
+]]
 
 function getdevice(player)
 	if not googul[player.UserId] then
@@ -8081,9 +8083,9 @@ end
 
 start()
 scan()
-scanfordevice()
-gmodlistener()
-remotelistener()
+--scanfordevice()
+--gmodlistener()
+--remotelistener()
 
 --[[ saving here for now, prob never gonna use cuz it requires remotes and retarded shit
 
