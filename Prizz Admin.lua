@@ -1,4 +1,9 @@
-currentVersion = "0.9.4"
+if workspace:FindFirstChild("PLADMIN LOADED SUCCESS") then
+	warn("PrizzLife is already loaded")
+	return
+end
+
+currentVersion = "0.9.9"
 
 Execution_Runtime = tick() 
 PLadmin_Settings = { 
@@ -25,174 +30,6 @@ PLadmin_Settings = {
 };wait()
 
 Instance.new("Folder", game:GetService("Workspace")).Name = "PLADMIN LOADED SUCCESS"
-local PLAdmin = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local ScriptName = Instance.new("TextLabel")
-local ExecBar = Instance.new("TextBox")
-local CloseButton = Instance.new("TextButton")
-local MinimizeButton = Instance.new("TextButton")
-local SettingButton = Instance.new("ImageButton")
-local Toggles_Frame = Instance.new("ScrollingFrame")
-local CMDS_Frame = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
-local UIListLayout2 = Instance.new("UIListLayout")
-local UnloadScript = nil
-local Unloaded = false
-
-PLAdmin.Name = "PLAdmin"
-PLAdmin.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-PLAdmin.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-PLAdmin.ResetOnSpawn = false
-
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = PLAdmin
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.BorderSizePixel = 2
-MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-MainFrame.Size = UDim2.new(0, 250, 0, 304)
-MainFrame.Active = true
-MainFrame.Visible = false
-
-ScriptName.Name = "ScriptName"
-ScriptName.Parent = MainFrame
-ScriptName.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ScriptName.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScriptName.BorderSizePixel = 0
-ScriptName.Size = UDim2.new(0, 250, 0, 17)
-ScriptName.Font = Enum.Font.SourceSans
-ScriptName.Text = "  PRIZZLIFE > CMDSLIST"
-ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
-ScriptName.TextSize = 13.000
-ScriptName.TextXAlignment = Enum.TextXAlignment.Left
-
-ExecBar.Name = "ExecBar"
-ExecBar.Parent = MainFrame
-ExecBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-ExecBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ExecBar.BorderSizePixel = 2
-ExecBar.Position = UDim2.new(-1.22070318e-07, 0, 0.833333313, 0)
-ExecBar.Size = UDim2.new(0, 250, 0, 25)
-ExecBar.Font = Enum.Font.SourceSans
-ExecBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecBar.Text = ""
-ExecBar.PlaceholderText = "Command Bar"
-ExecBar.TextSize = 14.000
-ExecBar.ClearTextOnFocus = false
-
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CloseButton.BorderSizePixel = 0
-CloseButton.Position = UDim2.new(0.930000007, 0, -0.00100000005, 0)
-CloseButton.Size = UDim2.new(0, 19, 0, 17)
-CloseButton.Font = Enum.Font.SourceSans
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.TextSize = 14.000
-
-MinimizeButton.Name = "MinimizeButton"
-MinimizeButton.Parent = MainFrame
-MinimizeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MinimizeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MinimizeButton.BorderSizePixel = 0
-MinimizeButton.Position = UDim2.new(0.850000024, 0, -0.00100000005, 0)
-MinimizeButton.Size = UDim2.new(0, 19, 0, 17)
-MinimizeButton.Font = Enum.Font.SourceSans
-MinimizeButton.Text = "-"
-MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-MinimizeButton.TextSize = 14.000
-
-SettingButton.Name = "SettingButton"
-SettingButton.Parent = MainFrame
-SettingButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SettingButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SettingButton.BorderSizePixel = 0
-SettingButton.Position = UDim2.new(0.769999981, 0, -0.00100000005, 0)
-SettingButton.Size = UDim2.new(0, 19, 0, 17)
-SettingButton.Image = "rbxassetid://11308562716"
-
-Toggles_Frame.Name = "Toggles_Frame"
-Toggles_Frame.Parent = MainFrame
-Toggles_Frame.Active = true
-Toggles_Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Toggles_Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Toggles_Frame.BorderSizePixel = 0
-Toggles_Frame.Position = UDim2.new(0, 0, 0.104999997, 0)
-Toggles_Frame.Size = UDim2.new(0, 250, 0, 111)
-Toggles_Frame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
-Toggles_Frame.ScrollBarThickness = 4
-Toggles_Frame.ElasticBehavior = Enum.ElasticBehavior.Never
-Toggles_Frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-Toggles_Frame.ScrollingDirection = Enum.ScrollingDirection.Y
-Toggles_Frame.Visible = false
-
-UIListLayout2.Parent = Toggles_Frame
-UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout2.Padding = UDim.new(0.0088999978, 0)
-UIListLayout2.VerticalAlignment = Enum.VerticalAlignment.Top
-
-CMDS_Frame.Name = "CMDS_Frame"
-CMDS_Frame.Parent = MainFrame
-CMDS_Frame.Active = true
-CMDS_Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-CMDS_Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CMDS_Frame.BorderSizePixel = 0
-CMDS_Frame.Position = UDim2.new(0, 0, 0.104999997, 0)
-CMDS_Frame.Size = UDim2.new(0, 250, 0, 111)
-CMDS_Frame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
-CMDS_Frame.ScrollBarThickness = 4
-CMDS_Frame.ElasticBehavior = Enum.ElasticBehavior.Never
-CMDS_Frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-CMDS_Frame.ScrollingDirection = Enum.ScrollingDirection.Y
-
-UIListLayout.Parent = CMDS_Frame
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0.0088999978, 0)
-UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
-
---Gui functions
-
-local UIS = game:GetService("UserInputService")
-function DraggifyFrame(Frame)
-	local dragToggle = nil
-	local dragSpeed = 0.50
-	local dragInput = nil
-	local dragStart = nil
-	local dragPos = nil
-	local startPos = nil
-	local  function updateInput(input)
-		local Delta = input.Position - dragStart
-		local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-		game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
-	end
-	Frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-			dragToggle = true
-			dragStart = input.Position
-			startPos = Frame.Position
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragToggle = false
-				end
-			end)
-		end
-	end)
-	Frame.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	game:GetService("UserInputService").InputChanged:Connect(function(input)
-		if input == dragInput and dragToggle then
-			updateInput(input)
-		end
-	end)
-end
-
-Instance.new("Folder", game:GetService("Workspace")).Name = "PLADMIN LOADED SUCCESS"
 
 local PLAdmin = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -205,6 +42,7 @@ local Toggles_Frame = Instance.new("ScrollingFrame")
 local CMDS_Frame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local UIListLayout2 = Instance.new("UIListLayout")
+local TopBar = Instance.new("Frame")
 local UnloadScript = nil
 local Unloaded = false
 
@@ -215,18 +53,43 @@ PLAdmin.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = PLAdmin
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.BackgroundColor3 = Color3.fromRGB(45,45,45)
 MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BorderSizePixel = 2
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-MainFrame.Size = UDim2.new(0, 295, 0, 185)
+MainFrame.Size = UDim2.new(0, 295, 0, 400)
 MainFrame.Active = true
 
+TopBar.Name = "TopBar"
+TopBar.Parent = MainFrame
+TopBar.BackgroundColor3 = Color3.fromRGB(0,0,0)
+TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopBar.BorderSizePixel = 2
+TopBar.AnchorPoint = Vector2.new(0, 0)
+TopBar.Position = UDim2.new(0, 0, 0, 0)
+TopBar.Size = UDim2.new(1, 0, 0, 20)
+TopBar.Active = true
+TopBar.Visible = true
+
+local TextLabel23 = Instance.new("TextLabel")
+TextLabel23.Name = "CreditLabel"
+TextLabel23.Parent = MainFrame
+TextLabel23.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel23.BackgroundTransparency = 1
+TextLabel23.Size = UDim2.new(0, 295, 0, 20)
+TextLabel23.Position = UDim2.new(0, 0, 0, 20)
+TextLabel23.Text = "In Loving Memory of elliexmln, thank you for everything! 🕊️"
+TextLabel23.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel23.TextSize = 12
+TextLabel23.Font = Enum.Font.SourceSans
+TextLabel23.TextXAlignment = Enum.TextXAlignment.Center
+TextLabel23.TextYAlignment = Enum.TextYAlignment.Center
+TextLabel23.ZIndex = 2
 
 ScriptName.Name = "ScriptName"
-ScriptName.Parent = MainFrame
-ScriptName.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScriptName.Parent = TopBar
+ScriptName.BackgroundTransparency = 1
 ScriptName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScriptName.BorderSizePixel = 0
 ScriptName.Size = UDim2.new(0, 295, 0, 20)
@@ -242,7 +105,7 @@ ExecBar.Parent = MainFrame
 ExecBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 ExecBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ExecBar.BorderSizePixel = 2
-ExecBar.Position = UDim2.new(0, 0, 0.852162123, 0)
+ExecBar.Position = UDim2.new(0, 0, 1, -27)
 ExecBar.Size = UDim2.new(0, 295, 0, 27)
 ExecBar.ZIndex = 2
 ExecBar.Font = Enum.Font.SourceSans
@@ -253,7 +116,7 @@ ExecBar.TextSize = 15.000
 ExecBar.ClearTextOnFocus = false
 
 CloseButton.Name = "CloseButton"
-CloseButton.Parent = MainFrame
+CloseButton.Parent = TopBar
 CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CloseButton.BorderSizePixel = 0
@@ -265,7 +128,7 @@ CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CloseButton.TextSize = 14.000
 
 MinimizeButton.Name = "MinimizeButton"
-MinimizeButton.Parent = MainFrame
+MinimizeButton.Parent = TopBar
 MinimizeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MinimizeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MinimizeButton.BorderSizePixel = 0
@@ -277,7 +140,7 @@ MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizeButton.TextSize = 14.000
 
 SettingButton.Name = "SettingButton"
-SettingButton.Parent = MainFrame
+SettingButton.Parent = TopBar
 SettingButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SettingButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SettingButton.BorderSizePixel = 0
@@ -292,7 +155,7 @@ Toggles_Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Toggles_Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Toggles_Frame.BorderSizePixel = 0
 Toggles_Frame.Position = UDim2.new(0, 0, 0.105000056, 0)
-Toggles_Frame.Size = UDim2.new(0, 295, 0, 137)
+Toggles_Frame.Size = UDim2.new(0, 295, 0, 350)
 Toggles_Frame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 Toggles_Frame.ScrollBarThickness = 6
 Toggles_Frame.ElasticBehavior = Enum.ElasticBehavior.Never
@@ -312,7 +175,7 @@ CMDS_Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 CMDS_Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CMDS_Frame.BorderSizePixel = 0
 CMDS_Frame.Position = UDim2.new(0, 0, 0.105000056, 0)
-CMDS_Frame.Size = UDim2.new(0, 295, 0, 137)
+CMDS_Frame.Size = UDim2.new(0, 295, 0, 350)
 CMDS_Frame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 CMDS_Frame.ScrollBarThickness = 6
 CMDS_Frame.ElasticBehavior = Enum.ElasticBehavior.Never
@@ -358,7 +221,7 @@ local AddList = function(args, description, isCategory)
 		newCategory.Name = "Category_Frame"
 		newCategory.Parent = background
 		newCategory.Size = UDim2.new(0, 288, 0, 30)
-		newCategory.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+		newCategory.BackgroundColor3 = Color3.fromRGB(12,12,12)
 
 		newCategory.Font = Enum.Font.SourceSans
 		newCategory.Text = args
@@ -416,7 +279,7 @@ local AddList = function(args, description, isCategory)
 	TextLabel.TextSize = 14.000
 	TextLabel.TextWrapped = true
 	TextLabel.TextYAlignment = Enum.TextYAlignment.Top
-	
+
 	local descriptionVisible = false
 	local descriptionLabel = nil
 
@@ -432,9 +295,10 @@ local AddList = function(args, description, isCategory)
 			descriptionLabel = Instance.new("TextLabel")
 			descriptionLabel.Parent = NewFrame
 			descriptionLabel.Name = "Description_Frame"
-			descriptionLabel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+			Color3.fromRGB(36, 36, 36)
 			descriptionLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			descriptionLabel.BorderSizePixel = 0
+			descriptionLabel.BackgroundColor3 = Color3.fromRGB(45,45,45)
 			descriptionLabel.ZIndex = 1
 			descriptionLabel.BorderMode = Enum.BorderMode.Outline
 			descriptionLabel.Size = UDim2.new(0, 288, 0, 32)
@@ -446,7 +310,7 @@ local AddList = function(args, description, isCategory)
 			descriptionLabel.TextWrapped = true
 			descriptionLabel.TextSize = 14.000
 
-			NewFrame.Size = UDim2.new(0, 288, 0, 50) -- Expand frame to fit description
+			NewFrame.Size = UDim2.new(0, 288, 0, 50)
 			descriptionVisible = true
 		end
 	end)
@@ -526,19 +390,33 @@ end
 --GUI Connections
 DraggifyFrame(MainFrame)
 
+
 MinimizeButton.MouseButton1Click:Connect(function()
-	if CMDS_Frame.Visible == false and not (Toggles_Frame.Visible == true) then
-		CMDS_Frame.Visible = true;SettingButton.Visible = true;Toggles_Frame.Visible = false
-		MainFrame.Size = UDim2.new(0,295,0,185);ExecBar.PlaceholderText = "> Search / Execute <"
+	if CMDS_Frame.Visible == false and not Toggles_Frame.Visible then
+		CMDS_Frame.Visible = true
+		SettingButton.Visible = true
+		Toggles_Frame.Visible = false
+		MainFrame.Size = UDim2.new(0, 295, 0, 400)
+		ExecBar.Visible = true
+		TopBar.Position = UDim2.new(0, 0, 0, 0)
+		ExecBar.Position = UDim2.new(0, 0, 1, -27)
+		ExecBar.PlaceholderText = "> Search / Execute <"
 	else
-		Toggles_Frame.Visible = false;CMDS_Frame.Visible = false;SettingButton.Visible = false
-		MainFrame.Size = UDim2.new(0,295,0,22);ExecBar.PlaceholderText = "> CommandBar <"
+		Toggles_Frame.Visible = false
+		CMDS_Frame.Visible = false
+		SettingButton.Visible = false
+
+		MainFrame.Size = UDim2.new(0, 295, 0, 49)
+		TopBar.Position = UDim2.new(0, 0, 0, 0)
+		ExecBar.Position = UDim2.new(0, 0, 0, 22)
+		ExecBar.Visible = true
+		ExecBar.PlaceholderText = "> CommandBar <"
 	end
 end)
 
-
 CloseButton.MouseButton1Click:Connect(function()
 	MainFrame.Visible = false
+	ExecBar.TextEditable = false
 
 	local ClosedImageButton = Instance.new("ImageButton")
 	ClosedImageButton.Name = "TextButton"
@@ -552,16 +430,17 @@ CloseButton.MouseButton1Click:Connect(function()
 	ClosedImageButton.Size = UDim2.new(0, 53, 0, 52)
 	ClosedImageButton.Image = "rbxassetid://101782461395138"
 	ClosedImageButton.ImageTransparency = 0.170
-	
+
 	local UICorner = Instance.new("UICorner")
 	UICorner.CornerRadius = UDim.new(1, 1)
 	UICorner.Parent = ClosedImageButton
-	
+
 	local con
 	con = ClosedImageButton.MouseButton1Click:Connect(function()
 		con:Disconnect()
 		ClosedImageButton:Destroy()
 		MainFrame.Visible = true
+		ExecBar.TextEditable = true
 	end)
 end)
 
@@ -575,33 +454,41 @@ end)
 
 ExecBar:GetPropertyChangedSignal("Text"):Connect(function()
 	CMDS_Frame.CanvasPosition = Vector2.new(0, 0)
-	local filteredLabels, otherLabels, searchQuery = {}, {}, ExecBar.Text
+	local searchQuery = ExecBar.Text:lower()
+	local filteredLabels, otherLabels = {}, {}
+
 	for _, label in pairs(CMDS_Frame:GetChildren()) do
 		if label:IsA("Frame") then
 			local cmdName = label:FindFirstChild("CMD_Name")
-			if cmdName and cmdName.Text:lower():find(searchQuery:lower()) then
+			local categoryName = label:FindFirstChild("Category_Frame")
+
+			if cmdName and cmdName.Text:lower():find(searchQuery) then
+				table.insert(filteredLabels, label)
+			elseif categoryName and categoryName.Text:lower():find(searchQuery) then
 				table.insert(filteredLabels, label)
 			else
 				table.insert(otherLabels, label)
 			end
 		elseif label:IsA("TextLabel") or label:IsA("TextButton") then
-			if label.Text:lower():find(searchQuery:lower()) then
+			if label.Text:lower():find(searchQuery) then
 				table.insert(filteredLabels, label)
 			else
 				table.insert(otherLabels, label)
 			end
 		end
 	end
-	for i, tog in pairs(Toggles_Frame:GetChildren()) do
+
+	for _, tog in pairs(Toggles_Frame:GetChildren()) do
 		if tog:IsA("Frame") then
 			local togName = tog:FindFirstChild("TOG_Name")
-			if togName and togName.Text:lower():find(searchQuery:lower()) then
+			if togName and togName.Text:lower():find(searchQuery) then
 				table.insert(filteredLabels, tog)
 			else
 				table.insert(otherLabels, tog)
 			end
 		end
 	end
+
 	for i, label in ipairs(filteredLabels) do
 		label.Visible = true
 		label.LayoutOrder = i
@@ -874,101 +761,103 @@ end
 local LocTP = function(cframe)
 	LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = cframe
 end
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
 
-local activeNotifs = {}
+local player = Players.LocalPlayer
 
-local Notif = function(title, text, duration)
-	local duration = duration or 3
+local Frame23 = Instance.new("Frame")
+Frame23.Parent = PLAdmin
+Frame23.Transparency = 1
+Frame23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame23.BorderSizePixel = 0
+Frame23.Position = UDim2.new(0.625, 0, 0.037580274, 0)
+Frame23.Size = UDim2.new(0.360824734, 0, 0.882352889, 0)
 
-	local frame = Instance.new("Frame")
-	local corner = Instance.new("UICorner")
+local layout = Instance.new("UIListLayout")
+layout.SortOrder = Enum.SortOrder.LayoutOrder
+layout.Padding = UDim.new(0, 10)
+layout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+layout.Parent = Frame23
+
+
+local function Notif(args, text, duration)
+	duration = duration or 3
+
+	local notif = Instance.new("Frame")
+	notif.Name = "notifFrame"
+	notif.Size = UDim2.new(0, 320, 0, 72)
+	notif.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	notif.BorderSizePixel = 0
+	notif.BackgroundTransparency = 0
+	notif.Parent = Frame23
+	notif.LayoutOrder = tick()
+
+	local image = Instance.new("ImageLabel")
+	image.Size = UDim2.new(0, 72, 0, 72)
+	image.Position = UDim2.new(0, 0, 0, 0)
+	image.BackgroundTransparency = 1
+	image.Image = "rbxassetid://71672543266605"
+	image.Parent = notif
+
+	local title = Instance.new("TextLabel")
+	title.RichText = true
+	title.Name = "title"
+	title.Parent = notif
+	title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	title.BackgroundTransparency = 1.000
+	title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	title.BorderSizePixel = 0
+	title.Position = UDim2.new(0.25, 0, 0, 0)
+	title.Size = UDim2.new(0, 192, 0, 35)
+	title.Font = Enum.Font.SourceSans
+	title.Text = "<b>" .. args .. "</b>"
+	title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	title.TextScaled = true
+	title.TextSize = 14.000
+	title.TextWrapped = true
+	title.TextXAlignment = Enum.TextXAlignment.Left
+
 	local desc = Instance.new("TextLabel")
-	local titleLabel = Instance.new("TextLabel")
-	local stroke = Instance.new("UIStroke")
-	local aspectRatio = Instance.new('UIAspectRatioConstraint')
-	local gradient = Instance.new("UIGradient")
 
-	frame.Name = "NotifyFrame"
-	frame.Parent = PLAdmin
-	frame.AnchorPoint = Vector2.new(0.5, 0.5)
-	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	frame.BackgroundTransparency = 0.3
-	frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	frame.BorderSizePixel = 0
-	frame.Position = UDim2.new(1, 0,0.771, 0)
-
-	local screenSize = game:GetService("Workspace").CurrentCamera.ViewportSize
-	frame.Size = screenSize.X > 1280 and UDim2.new(0.18, 0, 0.15, 0) or UDim2.new(0.227, 0, 0.197, 0)
-
-	corner.Parent = frame
-	corner.CornerRadius = UDim.new(0, 8)
-
-	stroke.Parent = frame
-	stroke.Color = Color3.fromRGB(90, 90, 120)
-	stroke.Thickness = 4
-
-	gradient.Parent = stroke
-	gradient.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(50, 50, 70)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(80, 80, 110))
-	})
-
-	desc.Name = "Desc"
-	desc.Parent = frame
-	desc.AnchorPoint = Vector2.new(0.5, 0.5)
-	desc.BackgroundTransparency = 1
-	desc.Position = UDim2.new(0.5, 0, 0.7, 0)
-	desc.Size = UDim2.new(0.94, 0, 0.398, 0)
-	desc.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
+	desc.Name = "desc"
+	desc.Parent = notif
+	desc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	desc.BackgroundTransparency = 1.000
+	desc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	desc.BorderSizePixel = 0
+	desc.Position = UDim2.new(0.25, 0, 0.486111104, 0)
+	desc.Size = UDim2.new(0, 192, 0, 37)
+	desc.Font = Enum.Font.SourceSans
+	desc.Text = text
 	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
 	desc.TextScaled = true
+	desc.TextSize = 14.000
 	desc.TextWrapped = true
-	desc.Text = text
+	desc.TextXAlignment = Enum.TextXAlignment.Left
 
-	titleLabel.Name = "Title"
-	titleLabel.Parent = frame
-	titleLabel.TextScaled = true
-	titleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-	titleLabel.BackgroundTransparency = 1
-	titleLabel.Position = UDim2.new(0.5, 0, 0.3, 0)
-	titleLabel.Size = UDim2.new(0.94, 0, 0.368, 0)
-	titleLabel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold)
-	titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-	titleLabel.TextWrapped = true
-	titleLabel.Text = title
+	local divider = Instance.new("Frame")
+	divider.Size = UDim2.new(0, 233, 0, 1)
+	divider.Position = UDim2.new(0.25, 0, 0.486, 0)
+	divider.BackgroundColor3 = Color3.fromRGB(176, 176, 176)
+	divider.BorderSizePixel = 0
+	divider.Parent = notif
 
-	aspectRatio.Parent = frame
-	aspectRatio.AspectRatio = 2.608
-	aspectRatio.DominantAxis = Enum.DominantAxis.Height
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	UIAspectRatioConstraint.Parent = Frame23
+	UIAspectRatioConstraint.AspectRatio = 0.636
 
-	local tweenService = game:GetService("TweenService")
-	local tweenIn = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	local tweenOut = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
-
-	local newPos = UDim2.new(0.873, 0, 0.873 - (#activeNotifs * 0.217), 0)
-	local inTween = tweenService:Create(frame, tweenIn, {Position = newPos})
-	inTween:Play()
-
-	table.insert(activeNotifs, frame)
-
-	local function removeNotif()
-		wait(duration)
-		local outTween = tweenService:Create(frame, tweenOut, {Position = UDim2.new(2, 0, 0.873, 0)})
-		outTween:Play()
-
-		outTween.Completed:Connect(function()
-			for i = 1, #activeNotifs do
-				if activeNotifs[i] == frame then
-					table.remove(activeNotifs, i)
-					break
-				end
-			end
-
-			frame:Destroy()
-		end)
-	end
-
-	coroutine.wrap(removeNotif)()
+	task.delay(duration, function()
+		if notif and notif.Parent then
+			local fadeOut = TweenService:Create(notif, TweenInfo.new(0.3), {
+				BackgroundTransparency = 1
+			})
+			fadeOut:Play()
+			fadeOut.Completed:Connect(function()
+				notif:Destroy()
+			end)
+		end
+	end)
 end
 
 local PromptUser = function(Title, Text, Duration, Button1, Button2, DaCallback, DeCallback, waitresponse)
@@ -1006,26 +895,13 @@ local PromptUser = function(Title, Text, Duration, Button1, Button2, DaCallback,
 end
 
 local SysMessage = function(datext, dacolor)
-	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
-		['Text'] = datext;
-		['Color'] = dacolor or Color3.fromRGB(255, 0, 0);
-		['Font'] = Enum.Font.SourceSansBold;
-		['FontSize'] = Enum.FontSize.Size24;
-	})
+	local TCS = game:GetService("TextChatService")
+	local channels = TCS:WaitForChild("TextChannels")
+	local system = channels:FindFirstChild("RBXSystem")
+	system:SendAsync(datext)
 end
 
-local Chat = function(args, isWhisper, isSilent)
-	if isSilent then
-		local serv = game:GetService("Players").Chat
-		serv(Players, args)
-		return
-	end
-	if isWhisper then
-		Rstorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. isWhisper.Name .. " " .. args, "All")
-	else
-		Rstorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args, "All")
-	end
-end
+local Chat = loadstring(game:HttpGet("https://gist.githubusercontent.com/devguy100/6a49aa32164143be3ac90f2d705c4583/raw/2f0016ea1d122ae4a3816a48775bead9d90188ee/gistfile1.txt"))()
 
 local VKeyPress = function(args, args2, waits)
 	if args2 == "Press" then
@@ -1721,7 +1597,7 @@ local BringPL = function(BringFrom, Destination, isCFrame, donotusecar, dontbrea
 					local Predict = (VRoot.CFrame - (Vector3.new(0, 0, -0.1) * step1)) + (Movement * (step1 * 28))
 					if Predict.Position.Y > 1 then
 						if CarSpin then
-							SpinRad += 30
+							SpinRad = SpinRad + 30
 							Car:SetPrimaryPartCFrame(Predict * CFrame.Angles(0, math.rad(SpinRad), 0))
 						else
 							Car:SetPrimaryPartCFrame(Predict)
@@ -5078,7 +4954,7 @@ local OnCommand = function(text)
 					if Lroot then
 						local oldvelocity = Lroot.Velocity
 						Lroot.Velocity = ((oldvelocity * 10000) + Vector3.new(0, 10000, 0)); Rstep:Wait(); Lroot.Velocity = oldvelocity
-						Rstep:Wait(); Lroot.Velocity = oldvelocity + Vector3.new(0, tempo, 0); tempo *= -1
+						Rstep:Wait(); Lroot.Velocity = oldvelocity + Vector3.new(0, tempo, 0); tempo = tempo * -1
 					end
 				end; tempo = nil
 			end)
@@ -6269,27 +6145,147 @@ local OnCommand = function(text)
 			end
 		end
 	elseif cm("fly") or cm("flight") then
-		local DaNumber = tonumber(Args[2])
-		if States.Flying and not DaNumber then
-			Notif("Flying", "You are already flying, please type " .. Prefix .. "unfly to disable.")
-			return
-		elseif States.Flying and DaNumber then
-			States.Flying = false
-			wait(.2)
+		local function flyOnCall()
+			local DaNumber = tonumber(Args[2])
 			States.Flying = true
-			Flight(DaNumber)
-			return
+			if DaNumber then
+				Flight(DaNumber)
+			else
+				Flight()
+			end
+			Notif("OK", "Now flying.")
 		end
-		States.Flying = true
-		if DaNumber then
-			Flight(DaNumber)
-		else
-			Flight()
-		end
-		Notif("OK", "Now flying.")
+
+		flyOnCall()
+
+		local FlyPanel = Instance.new("Frame")
+		local TextLabel = Instance.new("TextLabel")
+		local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+		local CloseFly = Instance.new("TextButton")
+		local Instructions = Instance.new("TextLabel")
+		local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+		local fly = Instance.new("TextButton")
+		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+		FlyPanel.Name = "FlyPanel"
+		FlyPanel.Parent = PLAdmin
+		FlyPanel.AnchorPoint = Vector2.new(0.5, 0.5)
+		FlyPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		FlyPanel.BorderSizePixel = 0
+		FlyPanel.Position = UDim2.new(0.8607, 0, 0.8733, 0)
+		FlyPanel.Size = UDim2.new(0.2416, 0, 0.2302, 0)
+
+		TextLabel.Parent = FlyPanel
+		TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		TextLabel.BackgroundTransparency = 0.6
+		TextLabel.Size = UDim2.new(1, 0, 0.27, 0)
+		TextLabel.Font = Enum.Font.SourceSans
+		TextLabel.Text = "FLY"
+		TextLabel.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel.TextScaled = true
+		TextLabel.TextWrapped = true
+
+		UITextSizeConstraint.Parent = TextLabel
+		UITextSizeConstraint.MaxTextSize = 26
+
+		CloseFly.Name = "CloseFly"
+		CloseFly.Parent = FlyPanel
+		CloseFly.BackgroundTransparency = 1
+		CloseFly.Position = UDim2.new(0.8488, 0, 0, 0)
+		CloseFly.Size = UDim2.new(0.1511, 0, 0.27, 0)
+		CloseFly.Font = Enum.Font.SourceSans
+		CloseFly.Text = "X"
+		CloseFly.TextColor3 = Color3.new(1, 1, 1)
+		CloseFly.TextScaled = true
+
+		CloseFly.MouseButton1Click:Connect(function()
+			FlyPanel:Destroy()
+		end)
+
+		Instructions.Name = "Instructions"
+		Instructions.RichText = true
+		Instructions.Parent = FlyPanel
+		Instructions.BackgroundTransparency = 1
+		Instructions.Position = UDim2.new(0, 0, 0.25, 0)
+		Instructions.Size = UDim2.new(1, 0, 0.45, 0)
+		Instructions.Font = Enum.Font.SourceSans
+		Instructions.Text = "Movement: <font color=\"#FFFF00\">W, A, S, D</font> <br />Toggle: <font color=\"#FFFF00\">E</font>"
+		Instructions.TextColor3 = Color3.new(1, 1, 1)
+		Instructions.TextScaled = true
+		Instructions.TextWrapped = true
+
+		UITextSizeConstraint_2.Parent = Instructions
+		UITextSizeConstraint_2.MaxTextSize = 44
+
+		fly.Name = "fly"
+		fly.Parent = FlyPanel
+		fly.BackgroundColor3 = Color3.fromRGB(200, 180, 255)
+		fly.BackgroundTransparency = 0.2
+		fly.Position = UDim2.new(0, 0, 0.77, 0)
+		fly.Size = UDim2.new(1, 0, 0.23, 0)
+		fly.Font = Enum.Font.SourceSansBold
+		fly.Text = "UNFLY"
+		fly.TextColor3 = Color3.new(0, 0, 0)
+		fly.TextScaled = true
+		fly.TextWrapped = true
+
+		UIAspectRatioConstraint.Parent = FlyPanel
+		UIAspectRatioConstraint.AspectRatio = 2.25
+
+		-- GUI toggle button
+		fly.MouseButton1Click:Connect(function()
+			if States.Flying then
+				States.Flying = false
+				fly.Text = "FLY"
+				Notif("Flying", "You are no longer flying.")
+			else
+				States.Flying = true
+				local DaNumber = tonumber(Args[2])
+				if DaNumber then
+					Flight(DaNumber)
+				else
+					Flight()
+				end
+				fly.Text = "UNFLY"
+				Notif("Flying", "Now flying.")
+			end
+		end)
+
+		flyToggleConnection = game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+			if gameProcessed then return end
+			if input.KeyCode == Enum.KeyCode.E then
+				if States.Flying then
+					States.Flying = false
+					fly.Text = "FLY"
+					Notif("Flying", "You are no longer flying.")
+				else
+					States.Flying = true
+					local DaNumber = tonumber(Args[2])
+					if DaNumber then
+						Flight(DaNumber)
+					else
+						Flight()
+					end
+					fly.Text = "UNFLY"
+					Notif("Flying", "Now flying.")
+				end
+			end
+		end)
 	elseif cm("unfly") or cm("noflight") then
 		States.Flying = false
+		if flyToggleConnection then
+			flyToggleConnection:Disconnect()
+			flyToggleConnection = nil
+		end
+
+		local panel = PLAdmin:FindFirstChild("FlyPanel")
+		if panel then
+			panel:Destroy()
+		end
+
+
 		Notif("OK", "Stopped flying.")
+
 	elseif cm("runspeed") then
 		local tonumb = tonumber(Args[2])
 		Saved.RunSpeed = tonumb
@@ -7109,6 +7105,31 @@ local OnCommand = function(text)
 				end)
 			end
 		end
+	elseif cm("test") then
+		AllItems()
+		for i,v in pairs(LocalPlayer.Backpack:GetChildren()) do
+			if v:IsA("Tool") then
+				v.Parent = LocalPlayer.Character
+				task.wait(interval)
+			end
+		end
+		LocalPlayer.Backpack.M9.Parent = LocalPlayer.Character
+		LocalPlayer.Backpack["AK-47"].Parent = LocalPlayer.Character
+		LocPL.Backpack["Remington 870"].Parent = LocalPlayer.Character
+		wait()
+		LocalPlayer.Character.M9.GripPos = Vector3.new(0.9, 2, 0)
+		LocalPlayer.Character["Remington 870"].GripPos = Vector3.new(0.9, 2, 2.1)
+		LocalPlayer.Character["AK-47"].GripPos = Vector3.new(0.9, 2, 6.4)
+		wait()
+		for i,v in pairs(LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Tool") then
+				v.Parent = LocalPlayer.Backpack
+			end
+		end
+		wait()
+		LocPL.Backpack.M9.Parent = LocPL.Character
+		LocPL.Backpack["AK-47"].Parent = LocPL.Character
+		LocPL.Backpack["Remington 870"].Parent = LocPL.Character
 	elseif cm("discord") or cm('support') or cm('help') then
 		if setClipboard then
 			toClipboard('https://discord.com/invite/pnh2RyzR6W')
@@ -7132,6 +7153,9 @@ local OnCommand = function(text)
 			end
 		end
 		print(1)
+	elseif cm("infyield") then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
+		Notif("Success", "Inf Yield ran")
 	elseif cm("deletecmdslist") then
 		for i,v in pairs(CMDS_Frame:GetChildren()) do
 			v:Destroy()
@@ -7233,24 +7257,11 @@ ExecBar.FocusLost:Connect(function(enterPressed, inputObj)
 		if not success then
 			dewarn("PrizzLife_Error: " .. tostring(errors) .. ".")
 		end
-		task.wait(.2)
+		task.wait()
 		ExecBar.Text = ""
 	end
 end)
-local ScriptCreatorId = 7779309460
 
-for _, player in pairs(Players:GetPlayers()) do
-	if player.UserId == ScriptCreatorId then
-		Chat("The script creator is already in the server: " .. player.Name .. " [" .. player.DisplayName .. "]")
-		break
-	end
-end
-
-Players.PlayerAdded:Connect(function(player)
-	if player.UserId == ScriptCreatorId then
-		Chat("The script creator has joined: " .. player.Name .. " [" .. player.DisplayName .. "]")
-	end
-end)
 local OnRankedCommand = function(text, ranked)
 	if ranked == LocalPlayer then
 		print("bruh")
@@ -7292,10 +7303,15 @@ local OnRankedCommand = function(text, ranked)
 		rchat("Debug_TEST!")
 	elseif rcm("cmds") or rcm("cmd") then
 		rchat("KILL CMDS: " .. Prefix .. "kill [plr,team,all], " .. Prefix .. "loopkill/unloopkill [plr,team,all], " .. Prefix .. "virus/unvirus [plr], " .. Prefix .. "killaura/unkillaura [plr], " .. Prefix .. "deathnuke/undeathnuke [plr], " .. Prefix .. "launchnuke [plr]", true)
+		task.wait()
 		rchat("TASE/ARREST/FLING: " .. Prefix .. "tase [plr,team,all], " .. Prefix .. "arrest [plr,team,all], " .. Prefix .. "fling [plr], " .. Prefix .. "sfling [plr], " .. Prefix .. "looptase/unlooptase [plr,team,all], " .. Prefix .. "loopfling/unloopfling [plr], " .. Prefix .. "loopsfling/unloopsfling [plr]", true)
+		task.wait()
 		rchat("TP CMDS: " .. Prefix .. "goto [plr,random], " .. Prefix .. "bring [plr,random], " .. Prefix .. "void [plr], " .. Prefix .. "trap/untrap [plr], " .. Prefix .. "voidkill [plr]", true)
+		task.wait()
 		rchat("MISC: " .. Prefix .. "criminal [plr], " .. Prefix .. "autocrim/unautocrim [plr], " .. Prefix .. "autoarrest/unautoarrest [plr,all], " .. Prefix .. "givekey [plr], " .. Prefix .. "fart [plr], " .. Prefix .. "cars, " .. Prefix .. "opendoors", true)
+		task.wait()
 		rchat("PLACES: " .. Prefix .. "nexus [plr], " .. Prefix .. "armory [plr], " .. Prefix .. "yard [plr], " .. Prefix .. "crimbase [plr], " .. Prefix .. "roof [plr], " .. Prefix .. "cafe [plr], " .. Prefix .. "tower [plr], " .. Prefix .. "gtower [plr]", true)
+		task.wait()
 		rchat("OTHER: " .. Prefix .. "oneshot [plr], " .. Prefix .. "onepunch [plr], " .. Prefix .. "friendlyfire [plr], " .. Prefix .. "antishoot [plr], " .. Prefix .. "antipunch [plr], " .. Prefix .. "antiarrest [plr], " .. Prefix .. "punchaura [plr], " .. Prefix .. "taseaura/untaseaura [plr]", true)
 		if Settings.Ranked.CrashCmds then
 			rchat("CRASH: " .. Prefix .. "servercrash, " .. Prefix .. "lag/unlag [amount], " .. Prefix .. "timeout, " .. Prefix .. "forcecrash, " .. Prefix .. "eventcrash, " .. Prefix .. "crashnuke [plr]", true)
@@ -8851,7 +8867,7 @@ local OnReplication = function(args)
 	end
 end
 
---Autorespawn
+
 SavedPositions.AutoRe = false
 local diedevent
 local lochar = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
@@ -8995,13 +9011,22 @@ Connections.InputBegan = game:GetService("UserInputService").InputBegan:Connect(
 		end
 		return
 	end
+	--if input.KeyCode == Enum.KeyCode.Semicolon and not textBoxHasFocus then
+	--	ExecBar:CaptureFocus()
+	--	Hbeat:Wait()
+	--	ExecBar.Text = ""
+	--end
+	--if input.KeyCode == Enum.KeyCode.Slash and not textBoxHasFocus then
+	--	Hbeat:Wait()
+	--	game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar:CaptureFocus()
+	--end
 	if input.KeyCode == Enum.KeyCode.Semicolon and not textBoxHasFocus then
 		Hbeat:Wait(); ExecBar:CaptureFocus()
 	end
-	if input.KeyCode == Enum.KeyCode.Slash and not textBoxHasFocus then
-		Hbeat:Wait()
-		game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar:CaptureFocus()
-	end
+	--if input.KeyCode == Enum.KeyCode.Slash and not textBoxHasFocus then
+	--	Hbeat:Wait()
+	--	game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar:CaptureFocus()
+	--end
 	if input.KeyCode == Enum.KeyCode.LeftShift then
 		States.Running = true; LAction("speed", Saved.RunSpeed)
 	end
@@ -9020,7 +9045,7 @@ task.spawn(function()
 		if Loops.KillTeams.All then
 			Gun("AK-47")
 			MultiKill(Players)
-			wait(CPing(nil, true) / 2)
+			task.wait(CPing(nil, true) / 2)
 		else
 			if next(Loops.Kill) then
 				for i,v in next, Loops.Kill do
@@ -10138,6 +10163,7 @@ task.spawn(function()
 
 	AddList("MISC CMDS", false, true) -- MISCELLANEOUS
 	AddList("forcefield / ff", "Enables forcefield (Basically just refresh guards)", false) --V
+	AddList("infyield", "Execute Infinity Yield", false)
 	AddList("unforcefield / unff", "Disable forcefield", false) --V
 	AddList("autoguard / aguard [boolean]", "When killing innocents, automatically switch to guards team.", false) --V
 	AddList("spinnytools / spintool [boolean] [speed] [math.rad]", "Automatically make items you equip spin", false) --V
@@ -10356,8 +10382,8 @@ task.spawn(function()
 		return Settings.Ranked.GiveCmds
 	end)
 	if Execution_Runtime then
-		Notif("Success", "Updated as of 27/04/2025", 6)
-		Notif("Time Taken", "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s).", 6)
+		Notif("Potang Ina Mo", "Updated as of 26/05/25", 6)
+		Notif("Milano", "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s).", 6)
 	end
 
 	Saved.PLINIT = Instance.new("ScreenGui");Saved.PLINIT.Name = "PLADMIN_INITIALS";Saved.PLINIT.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");Saved.PLINIT.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -10493,3 +10519,4 @@ UnloadScript = function()
 end
 --Check gamepass
 LocPL.Gamepass = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(LocalPlayer.UserId, 96651) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(LocalPlayer.UserId, 643697197)
+repeat wait(1) until not game
